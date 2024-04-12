@@ -5,28 +5,12 @@ class Node:
     self.next = None
   
 
-        
 class LinkedList:
   def __init__(self, value):
     new_node = Node(value)
     self.head = new_node
     self.tail = new_node
     self.length = 1
-
-  # add Node to end
-  def append(self, value):
-    pass
-    
-  # adds Node to the beginning 
-  def prepend(self, value):
-    pass
-
-  # insert Node at specific index
-  def insert(self, index, value):
-    pass
-
-
-
 
 my_linked_list = LinkedList(4)
 
