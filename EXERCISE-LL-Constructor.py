@@ -1,18 +1,29 @@
-# class Node:
-    ## WRITE NODE CONSTRUCTOR HERE ##
-    #                               #
-    #                               #
-    #                               #
-    #                               #
-    #################################
+class Node:
+  # creates new Node
+  def __init__(self, value):
+    self.value = value 
+    self.next = None
+  
+
         
-# class LinkedList:
-    ## WRITE LL CONSTRUCTOR HERE ##
-    #                             #
-    #                             #
-    #                             #
-    #                             #
-    ###############################
+class LinkedList:
+  def __init__(self, value):
+    new_node = Node(value)
+    self.head = new_node
+    self.tail = new_node
+    self.length = 1
+
+  # add Node to end
+  def append(self, value):
+    pass
+    
+  # adds Node to the beginning 
+  def prepend(self, value):
+    pass
+
+  # insert Node at specific index
+  def insert(self, index, value):
+    pass
 
 
 
