@@ -8,6 +8,7 @@ class Node:
 class LinkedList:
   def __init__(self, value):
     new_node = Node(value)
+    # sets head and tail to point at same node to initialize
     self.head = new_node
     self.tail = new_node
     self.length = 1
