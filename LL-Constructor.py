@@ -11,6 +11,7 @@ class LinkedList:
     # sets head and tail to point at same node to initialize
     self.head = new_node
     self.tail = new_node
+    # initializes the length to one node
     self.length = 1
 
 my_linked_list = LinkedList(4)
