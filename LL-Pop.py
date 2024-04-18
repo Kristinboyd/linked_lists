@@ -30,8 +30,26 @@ class LinkedList:
 
     # removes and retruns a Node from list, index is optional argument
     ## if no index is specified, pop will return the last element from the list
-    def pop(self, value):
-        pass
+    def pop(self):
+        if self.length == 0:
+            return None
+        temp = self.head
+        pre = self.head
+
+        while(temp.next):
+            pre = temp
+            temp = temp.next
+
+        self.tail = pre
+        self.tail.next = None
+        self.length -= 1
+
+        if self.length == 0:
+            self.head = None
+            self.tail = None
+
+        return temp
+            
 
 my_linked_list = LinkedList(1)
 my_linked_list.append(2)
