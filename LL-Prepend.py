@@ -28,45 +28,85 @@ class LinkedList:
         self.length += 1
         return True
 
-    # removes and returns a Node from list, index is optional argument
-    # if no index is specified, pop will return the last element from the list
     def pop(self):
         if self.length == 0:
             return None
         temp = self.head
         pre = self.head
-
         while(temp.next):
             pre = temp
             temp = temp.next
-
         self.tail = pre
         self.tail.next = None
         self.length -= 1
-
         if self.length == 0:
             self.head = None
             self.tail = None
-
         return temp
-            
 
-my_linked_list = LinkedList(1)
-my_linked_list.append(2)
+    # adds a node at the beginning of a linked list
+    def prepend(self, value):
+        new_node = Node(value)
+        if self.length == 0:
+            self.head = new_node
+            self.tail = new_node
+        else:
+            new_node.next = self.head
+            self.head = new_node
+        self.length += 1
+        return True
 
-# (2) Items - Returns 2 Node
-print(my_linked_list.pop().value)
-# (1) Item -  Returns 1 Node
-print(my_linked_list.pop().value)
-# (0) Items - Returns None
-print(my_linked_list.pop())
+
+
+
+my_linked_list = LinkedList(2)
+my_linked_list.append(3)
+
+print('Before prepend():')
+print('----------------')
+print('Head:', my_linked_list.head.value)
+print('Tail:', my_linked_list.tail.value)
+print('Length:', my_linked_list.length, '\n')
+print('Linked List:')
+my_linked_list.print_list()
+
+
+my_linked_list.prepend(1)
+
+
+print('\n\nAfter prepend():')
+print('---------------')
+print('Head:', my_linked_list.head.value)
+print('Tail:', my_linked_list.tail.value)
+print('Length:', my_linked_list.length, '\n')
+print('Linked List:')
+my_linked_list.print_list()
+
 
 
 """
     EXPECTED OUTPUT:
+    
+    Before prepend():
     ----------------
+    Head: 2
+    Tail: 3
+    Length: 2 
+
+    Linked List:
     2
+    3
+
+
+    After prepend():
+    ---------------
+    Head: 1
+    Tail: 3
+    Length: 3 
+
+    Linked List:
     1
-    None
+    2
+    3   
 
 """

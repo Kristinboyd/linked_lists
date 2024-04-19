@@ -28,38 +28,53 @@ class LinkedList:
         self.length += 1
         return True
 
-    # removes and returns a Node from list, index is optional argument
-    # if no index is specified, pop will return the last element from the list
     def pop(self):
         if self.length == 0:
             return None
         temp = self.head
         pre = self.head
-
         while(temp.next):
             pre = temp
             temp = temp.next
-
         self.tail = pre
         self.tail.next = None
         self.length -= 1
-
         if self.length == 0:
             self.head = None
             self.tail = None
-
         return temp
-            
 
-my_linked_list = LinkedList(1)
-my_linked_list.append(2)
+    def prepend(self, value):
+        new_node = Node(value)
+        if self.length == 0:
+            self.head = new_node
+            self.tail = new_node
+        else:
+            new_node.next = self.head
+            self.head = new_node
+        self.length += 1
+        return True
+
+    ## WRITE POP_FIRST METHOD HERE ##
+    #                               #
+    #                               #
+    #                               #
+    #                               #
+    #################################
+
+
+
+
+my_linked_list = LinkedList(2)
+my_linked_list.append(1)
+
 
 # (2) Items - Returns 2 Node
-print(my_linked_list.pop().value)
+print(my_linked_list.pop_first().value)
 # (1) Item -  Returns 1 Node
-print(my_linked_list.pop().value)
+print(my_linked_list.pop_first().value)
 # (0) Items - Returns None
-print(my_linked_list.pop())
+print(my_linked_list.pop_first())
 
 
 """
